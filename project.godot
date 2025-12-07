@@ -10,10 +10,22 @@ config_version=5
 
 [application]
 
-config/name="Ecology Room"
+config/name="Wolf Cascade"
 run/main_scene="res://scenes/EcosystemRoom1.tscn"
 config/features=PackedStringArray("4.5")
+boot_splash/fullsize=false
 
 [autoload]
 
 StoryState="*res://scripts/story_state.gd"
+
+[display]
+
+window/size/mode=3
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/ios/suppress_ui_gesture=false
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

@@ -1,49 +1,160 @@
-[gd_scene load_steps=6 format=3 uid="uid://chllf0p1fg2cp"]
+[gd_scene load_steps=12 format=3 uid="uid://chllf0p1fg2cp"]
 
 [ext_resource type="Script" uid="uid://bp7d8w0o32aiy" path="res://scripts/EcosystemRoom1.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bskxyc6vnrgv4" path="res://scenes/Player.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://drphu1wpjuvja" path="res://assets/background0.png" id="2_7f0sk"]
 [ext_resource type="PackedScene" uid="uid://6gteqoa0r6wa" path="res://scenes/NPC.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dqn7l5f146bb3" path="res://assets/horizon_light.png" id="3_chc4g"]
+[ext_resource type="Texture2D" uid="uid://n588krsbvbeq" path="res://assets/light_ring.png" id="3_r8xsy"]
 [ext_resource type="PackedScene" uid="uid://dngndd6ptq1h8" path="res://scenes/Hotspot.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://scenes/DialogueUI.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://bq28ungm3fumh" path="res://assets/wolf_gray_full.png" id="4_qycrb"]
+[ext_resource type="PackedScene" uid="uid://domd1w33crr60" path="res://scenes/DialogueUI.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://djppujoi28je5" path="res://assets/branch.png" id="6_1rrp7"]
+[ext_resource type="Script" uid="uid://s7h0w4r7e6xo" path="res://addons/touch_screen_joystick/touch_screen_joystick.gd" id="11_qmhki"]
 
 [node name="EcosystemRoom1" type="Node2D"]
 script = ExtResource("1")
 
 [node name="Environment" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2")]
+[node name="Background0" type="Sprite2D" parent="Environment"]
+position = Vector2(596, 334)
+scale = Vector2(0.90494794, 0.90494794)
+texture = ExtResource("2_7f0sk")
 
-[node name="NPCs" type="Node2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="Environment/Background0"]
+position = Vector2(276.259, -74.037415)
+scale = Vector2(1.5563549, 1.1643932)
+color = Color(0.92156863, 0.39215687, 0.7176471, 1)
+energy = 0.5
+texture = ExtResource("3_chc4g")
+texture_scale = 1.5
 
-[node name="Raven" parent="NPCs" instance=ExtResource("3")]
-position = Vector2(110, 248)
+[node name="UpperBound" type="StaticBody2D" parent="Environment"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/UpperBound"]
+position = Vector2(-2, -64)
+polygon = PackedVector2Array(9, 581, 245, 552, 375, 494, 448, 446, 503, 433, 586, 420, 613, 397, 644, 362, 701, 332, 895, 317, 929, 331, 789, 378, 972, 475, 1318, 29, -57, 41)
+
+[node name="RTiver" type="StaticBody2D" parent="Environment"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/RTiver"]
+polygon = PackedVector2Array(190, 624, 357, 565, 493, 492, 646, 452, 737, 411, 802, 393, 714, 346, 696, 319, 802, 301, 1043, 273, 1279, 375, 1306, 978, -97, 859, -191, 684, -115, 19, -41, 53, -2, 696)
+
+[node name="Wolves" type="Node2D" parent="Environment"]
+visible = false
+
+[node name="wolf1" type="Sprite2D" parent="Environment/Wolves"]
+position = Vector2(319, 373)
+scale = Vector2(0.98807126, 0.9265743)
+texture = ExtResource("4_qycrb")
+hframes = 12
+vframes = 8
+
+[node name="Wolf2" type="Sprite2D" parent="Environment/Wolves"]
+modulate = Color(1, 1, 1, 0.29803923)
+position = Vector2(528, 332)
+scale = Vector2(0.91745675, 0.91745675)
+texture = ExtResource("4_qycrb")
+hframes = 12
+vframes = 8
+frame = 12
+
+[node name="Wolf3" type="Sprite2D" parent="Environment/Wolves"]
+modulate = Color(1, 1, 1, 0.48235294)
+position = Vector2(1028, 423)
+scale = Vector2(1.381146, 1.381146)
+texture = ExtResource("4_qycrb")
+hframes = 12
+vframes = 8
+frame = 19
+
+[node name="Wolf4" type="Sprite2D" parent="Environment/Wolves"]
+modulate = Color(1, 1, 1, 0.48235294)
+position = Vector2(35, 392.00003)
+scale = Vector2(1.5347211, 1.5347211)
+texture = ExtResource("4_qycrb")
+hframes = 12
+vframes = 8
+frame = 24
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Player" parent="Characters" instance=ExtResource("2")]
+position = Vector2(29, 627)
+
+[node name="Branch" type="Sprite2D" parent="Characters"]
+z_index = -63
+position = Vector2(691, 360)
+scale = Vector2(0.925, 0.92499995)
+texture = ExtResource("6_1rrp7")
+offset = Vector2(-1.0810547, -63.783783)
+
+[node name="Raven" parent="Characters" instance=ExtResource("3")]
+position = Vector2(181, 567)
 npc_name = "Raven"
 dialogue_id = "raven_intro"
 
-[node name="Elk" parent="NPCs" instance=ExtResource("3")]
-position = Vector2(248, 158)
+[node name="PointLight2D" type="PointLight2D" parent="Characters/Raven"]
+z_index = -2
+position = Vector2(-1, -19)
+energy = 0.56
+texture = ExtResource("3_r8xsy")
+
+[node name="Elk" parent="Characters" instance=ExtResource("3")]
+position = Vector2(611, 423)
 npc_name = "Elk"
+rect_size = Vector2(100, 100)
 dialogue_id = "elk_intro"
 
-[node name="WillowSpirit" parent="NPCs" instance=ExtResource("3")]
-position = Vector2(355, 60)
-npc_name = "Willow Spirit"
+[node name="PointLight2D3" type="PointLight2D" parent="Characters/Elk"]
+z_index = -2
+position = Vector2(-2, 15)
+energy = 0.56
+texture = ExtResource("3_r8xsy")
+
+[node name="WillowSpirit" parent="Characters" instance=ExtResource("3")]
+position = Vector2(386, 493)
+npc_name = "WillowSpirit"
+rect_size = Vector2(100, 100)
 dialogue_id = "willow_intro"
+
+[node name="PointLight2D2" type="PointLight2D" parent="Characters/WillowSpirit"]
+z_index = -2
+position = Vector2(1, 18)
+scale = Vector2(1.1077844, 1.0105263)
+energy = 0.56
+texture = ExtResource("3_r8xsy")
 
 [node name="Hotspots" type="Node2D" parent="."]
 
-[node name="ReintroduceWolves" parent="Hotspots" instance=ExtResource("4")]
-position = Vector2(674, 77)
-hotspot_id = "reintroduce_wolves"
-science_action = "reintroduce_wolves"
-
 [node name="ObserveChanges" parent="Hotspots" instance=ExtResource("4")]
-position = Vector2(306, 301)
+position = Vector2(641.00006, 323)
 hotspot_id = "observe_changes"
 science_action = "observe_changes"
+
+[node name="ReintroduceWolves" parent="Hotspots" instance=ExtResource("4")]
+position = Vector2(772, 230.00002)
+scale = Vector2(1, 0.99999994)
+hotspot_id = "reintroduce_wolves"
+science_action = "reintroduce_wolves"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("5")]
+offset_left = 214.0
+offset_top = 206.0
+offset_right = 214.0
+offset_bottom = 206.0
+
+[node name="touch_joystick" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 78.0
+offset_top = 80.0
+offset_right = 118.0
+offset_bottom = 120.0
+scale = Vector2(0.6010804, 0.6010804)
+script = ExtResource("11_qmhki")

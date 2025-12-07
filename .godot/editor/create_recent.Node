@@ -1,0 +1,10 @@
+Control
+Sprite2D
+Node2D
+PointLight2D
+OmniLight3D
+StaticBody2D
+AspectRatioContainer
+CollisionPolygon2D
+AnimationPlayer
+AnimationTree

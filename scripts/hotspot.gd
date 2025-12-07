@@ -4,6 +4,7 @@ extends Interactable
 @export var science_action: String = "none"
 
 func _ready() -> void:
+	super._ready()  # IMPORTANT: Set up Area2D body detection from parent class
 	interacted.connect(_on_interacted)
 
 func _on_interacted(_player: Node) -> void:
@@ -20,6 +21,9 @@ func _on_interacted(_player: Node) -> void:
 
 func _reintroduce_wolves() -> void:
 	var wolves = StoryState.get_var("wolf_pop", 0)
+	var main = get_tree().get_first_node_in_group("Main")
+	print(main.name)
+	main.get_node_or_null("Environment").get_node_or_null("Wolves").visible = true
 	if wolves > 0:
 		_show_feedback("The wolves are already here. Adding more right now might unbalance things.")
 		return
