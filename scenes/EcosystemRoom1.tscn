@@ -152,9 +152,9 @@ offset_bottom = 206.0
 [node name="touch_joystick" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 78.0
-offset_top = 80.0
-offset_right = 118.0
-offset_bottom = 120.0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 268.88696
+offset_bottom = 264.63153
 scale = Vector2(0.6010804, 0.6010804)
 script = ExtResource("11_qmhki")
