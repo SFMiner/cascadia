@@ -57,6 +57,12 @@ func start_dialogue(id: String, speaker: Node = null) -> void:
 	_queue = dialogues.get(id, ["... (no dialogue found)"]).duplicate()
 	_show_next()
 
+func color_panel(new_stylebox : StyleBoxFlat):
+	print("color_panel called with " + str(new_stylebox))
+	#panel.styleBox.set("bg_color", new_color)
+	panel.add_theme_stylebox_override("panel", new_stylebox)
+	#add_theme_stylebox_override("panel", new_stylebox)
+
 func show_system_message(text: String) -> void:
 	_current_speaker = null
 	_queue = [text]

@@ -1,5 +1,7 @@
-res://scenes/DialogueUI.tscn::8a0ea9c81e72fe20d1a1261085c723d5::1765126208::res://.godot/exported/133200997/export-a967681c43dabaaf9a8ef5a79ce92849-DialogueUI.scn
-res://scenes/EcosystemRoom1.tscn::5302a4e1f70e3e76187e8062699148e1::1765134981::res://.godot/exported/133200997/export-2d0a6fc4aa114a740ca8a5e7199e716c-EcosystemRoom1.scn
+res://scenes/DialogueUI.tscn::59e81d46ddbdbdf4d8f6f25ba63ed304::1765144451::res://.godot/exported/133200997/export-a967681c43dabaaf9a8ef5a79ce92849-DialogueUI.scn
+res://scenes/EcosystemRoom1.tscn::c595201d6f45f24be715d3c11b914252::1765155280::res://.godot/exported/133200997/export-2d0a6fc4aa114a740ca8a5e7199e716c-EcosystemRoom1.scn
 res://scenes/Hotspot.tscn::a65ef61e371fbe071563456fabcb1a81::1765085538::res://.godot/exported/133200997/export-15cce494c503cf62c5e14ad6cba481ed-Hotspot.scn
-res://scenes/NPC.tscn::f0a6fcc9823c65a55104d74e116997be::1765132220::res://.godot/exported/133200997/export-841c45c8b89ecab87b8904dd1c56ed7e-NPC.scn
-res://scenes/Player.tscn::8d8f1f5963e0995c9c8aec713b664a34::1765132220::res://.godot/exported/133200997/export-e8220e74d1354b9e6b168b513689419c-Player.scn
+res://scenes/NPC.tscn::1cd03e52398ce0bf031d63f32f0c764b::1765155173::res://.godot/exported/133200997/export-841c45c8b89ecab87b8904dd1c56ed7e-NPC.scn
+res://scenes/Player.tscn::800a1cb00c862338f82258fe7bcfd8a4::1765142901::res://.godot/exported/133200997/export-e8220e74d1354b9e6b168b513689419c-Player.scn
+res://scenes/green_panel.tres::178c9cbf2708b2620392c6e18155c35c::1765144264::res://.godot/exported/133200997/export-2cad3e5fb32b28c715456f825736905b-green_panel.res
+res://scenes/brown_panel.tres::a0c03785f79cb8874da62e0b73cab276::1765143017::res://.godot/exported/133200997/export-7033a2f4b7d7e1d9c81e7a8cac03a6ad-brown_panel.res

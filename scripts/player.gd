@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 	ap.play(anim)
 	z_index = position.y
 	
-	scale = Vector2(position.y / 627.0, position.y / 627.0)
+	scale = Vector2(1.5 * position.y / 627.0, 1.5 * position.y / 627.0)
 	if input_dir.length() > 0:
 		input_dir = input_dir.normalized()
 		_facing_dir = input_dir

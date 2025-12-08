@@ -3,6 +3,8 @@ extends Interactable
 @export var hotspot_id: String = "hotspot"
 @export var science_action: String = "none"
 
+var sb_brown : StyleBoxFlat = load("res://scenes/brown_panel.tres")
+
 func _ready() -> void:
 	super._ready()  # IMPORTANT: Set up Area2D body detection from parent class
 	interacted.connect(_on_interacted)
@@ -22,10 +24,11 @@ func _on_interacted(_player: Node) -> void:
 func _reintroduce_wolves() -> void:
 	var wolves = StoryState.get_var("wolf_pop", 0)
 	var main = get_tree().get_first_node_in_group("Main")
+	
 	print(main.name)
 	main.get_node_or_null("Environment").get_node_or_null("Wolves").visible = true
 	if wolves > 0:
-		_show_feedback("The wolves are already here. Adding more right now might unbalance things.")
+		_show_feedback("The wolves are already here. \nAdding more right now might unbalance things.")
 		return
 
 	StoryState.set_var("wolf_pop", 4)
@@ -40,7 +43,7 @@ func _reintroduce_wolves() -> void:
 	StoryState.set_var("willow_health", willow)
 
 	StoryState.set_flag("wolves_reintroduced", true)
-	_show_feedback("You reintroduce a small wolf pack. The elk start acting more cautious...")
+	_show_feedback("You reintroduce a small wolf pack. \nThe elk start acting more cautious...")
 
 func _observe_changes() -> void:
 	var wolves = StoryState.get_var("wolf_pop", 0)
@@ -59,6 +62,9 @@ func _default_action() -> void:
 
 func _show_feedback(text: String) -> void:
 	var dialogue_manager = get_tree().get_first_node_in_group("DialogueManager")
+	var screen_size = DisplayServer.screen_get_size(DisplayServer.window_get_current_screen())
+	dialogue_manager.position_panel(Vector2(300,  200))
+	dialogue_manager.color_panel(sb_brown)
 	if dialogue_manager:
 		dialogue_manager.show_system_message(text)
 

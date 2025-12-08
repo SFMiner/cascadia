@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chllf0p1fg2cp"]
+[gd_scene load_steps=19 format=3 uid="uid://chllf0p1fg2cp"]
 
 [ext_resource type="Script" uid="uid://bp7d8w0o32aiy" path="res://scripts/EcosystemRoom1.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bskxyc6vnrgv4" path="res://scenes/Player.tscn" id="2"]
@@ -11,6 +11,143 @@
 [ext_resource type="PackedScene" uid="uid://domd1w33crr60" path="res://scenes/DialogueUI.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://djppujoi28je5" path="res://assets/branch.png" id="6_1rrp7"]
 [ext_resource type="Script" uid="uid://s7h0w4r7e6xo" path="res://addons/touch_screen_joystick/touch_screen_joystick.gd" id="11_qmhki"]
+[ext_resource type="Texture2D" uid="uid://1ch4oysk7e5v" path="res://assets/cascadia title.png" id="12_nabnr"]
+[ext_resource type="FontFile" uid="uid://dkqph1emsmsvg" path="res://assets/OdinBold-MRzP.otf" id="13_fouqg"]
+[ext_resource type="AudioStream" uid="uid://bgve2f638iv5x" path="res://assets/river.wav" id="14_0fpqi"]
+[ext_resource type="AudioStream" uid="uid://b4ilw6ett8dp5" path="res://assets/raven_background.wav" id="15_befal"]
+
+[sub_resource type="Animation" id="Animation_fouqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash/Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Splash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/touch_joystick:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Splash/Title/Instructions:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/touch_instructions:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nabnr"]
+resource_name = "fade_in"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash/Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Splash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 6.0333333, 8.566667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/touch_joystick:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.366667, 6.0666666, 8.533334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Splash/Title/Instructions:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.9, 4.366667, 5.5666666),
+"transitions": PackedFloat32Array(0.9659363, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/touch_instructions:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.9333334, 6.0333333, 8.5, 10.033334, 10.9),
+"transitions": PackedFloat32Array(0.9659363, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpec0"]
+_data = {
+&"RESET": SubResource("Animation_fouqg"),
+&"fade_in": SubResource("Animation_nabnr")
+}
 
 [node name="EcosystemRoom1" type="Node2D"]
 script = ExtResource("1")
@@ -31,24 +168,24 @@ texture = ExtResource("3_chc4g")
 texture_scale = 1.5
 
 [node name="UpperBound" type="StaticBody2D" parent="Environment"]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/UpperBound"]
 position = Vector2(-2, -64)
-polygon = PackedVector2Array(9, 581, 245, 552, 375, 494, 448, 446, 503, 433, 586, 420, 613, 397, 644, 362, 701, 332, 895, 317, 929, 331, 789, 378, 972, 475, 1318, 29, -57, 41)
+polygon = PackedVector2Array(1, 548, 239, 507, 370, 453, 455, 417, 632, 349, 695, 319, 896, 295, 929, 331, 695, 380, 972, 475, 1318, 29, -57, 41)
 
-[node name="RTiver" type="StaticBody2D" parent="Environment"]
+[node name="River" type="StaticBody2D" parent="Environment"]
 visible = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/RTiver"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/River"]
 polygon = PackedVector2Array(190, 624, 357, 565, 493, 492, 646, 452, 737, 411, 802, 393, 714, 346, 696, 319, 802, 301, 1043, 273, 1279, 375, 1306, 978, -97, 859, -191, 684, -115, 19, -41, 53, -2, 696)
 
 [node name="Wolves" type="Node2D" parent="Environment"]
 visible = false
 
 [node name="wolf1" type="Sprite2D" parent="Environment/Wolves"]
-position = Vector2(319, 373)
-scale = Vector2(0.98807126, 0.9265743)
+modulate = Color(1, 1, 1, 0.5372549)
+position = Vector2(320.00003, 374)
+scale = Vector2(2, 2)
 texture = ExtResource("4_qycrb")
 hframes = 12
 vframes = 8
@@ -56,7 +193,7 @@ vframes = 8
 [node name="Wolf2" type="Sprite2D" parent="Environment/Wolves"]
 modulate = Color(1, 1, 1, 0.29803923)
 position = Vector2(528, 332)
-scale = Vector2(0.91745675, 0.91745675)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_qycrb")
 hframes = 12
 vframes = 8
@@ -65,7 +202,7 @@ frame = 12
 [node name="Wolf3" type="Sprite2D" parent="Environment/Wolves"]
 modulate = Color(1, 1, 1, 0.48235294)
 position = Vector2(1028, 423)
-scale = Vector2(1.381146, 1.381146)
+scale = Vector2(4, 4)
 texture = ExtResource("4_qycrb")
 hframes = 12
 vframes = 8
@@ -73,8 +210,8 @@ frame = 19
 
 [node name="Wolf4" type="Sprite2D" parent="Environment/Wolves"]
 modulate = Color(1, 1, 1, 0.48235294)
-position = Vector2(35, 392.00003)
-scale = Vector2(1.5347211, 1.5347211)
+position = Vector2(17, 390.00003)
+scale = Vector2(3, 3)
 texture = ExtResource("4_qycrb")
 hframes = 12
 vframes = 8
@@ -84,6 +221,8 @@ frame = 24
 
 [node name="Player" parent="Characters" instance=ExtResource("2")]
 position = Vector2(29, 627)
+scale = Vector2(3, 3)
+speed = 100.0
 
 [node name="Branch" type="Sprite2D" parent="Characters"]
 z_index = -63
@@ -93,18 +232,22 @@ texture = ExtResource("6_1rrp7")
 offset = Vector2(-1.0810547, -63.783783)
 
 [node name="Raven" parent="Characters" instance=ExtResource("3")]
-position = Vector2(181, 567)
+position = Vector2(184, 555)
+scale = Vector2(2, 2)
 npc_name = "Raven"
 dialogue_id = "raven_intro"
+sprite_offset = 20.0
 
 [node name="PointLight2D" type="PointLight2D" parent="Characters/Raven"]
 z_index = -2
 position = Vector2(-1, -19)
+scale = Vector2(1.5, 1.5)
 energy = 0.56
 texture = ExtResource("3_r8xsy")
 
 [node name="Elk" parent="Characters" instance=ExtResource("3")]
 position = Vector2(611, 423)
+scale = Vector2(1.5, 1.5)
 npc_name = "Elk"
 rect_size = Vector2(100, 100)
 dialogue_id = "elk_intro"
@@ -117,6 +260,7 @@ texture = ExtResource("3_r8xsy")
 
 [node name="WillowSpirit" parent="Characters" instance=ExtResource("3")]
 position = Vector2(386, 493)
+scale = Vector2(1.5, 1.5)
 npc_name = "WillowSpirit"
 rect_size = Vector2(100, 100)
 dialogue_id = "willow_intro"
@@ -158,3 +302,68 @@ offset_right = 268.88696
 offset_bottom = 264.63153
 scale = Vector2(0.6010804, 0.6010804)
 script = ExtResource("11_qmhki")
+use_input_actions = true
+
+[node name="touch_instructions" type="Label" parent="CanvasLayer"]
+offset_left = 214.0
+offset_top = 52.0
+offset_right = 254.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 0.29803923, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 36
+text = "⬅️ Controller for touch screens"
+
+[node name="Splash" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(596.99994, 334)
+scale = Vector2(0.90494794, 0.90494794)
+texture = ExtResource("2_7f0sk")
+
+[node name="Title" type="Sprite2D" parent="Splash"]
+position = Vector2(-9.945251, -56.356842)
+scale = Vector2(1.105036, 1.105036)
+texture = ExtResource("12_nabnr")
+
+[node name="Subtitle" type="Label" parent="Splash/Title"]
+anchors_preset = -1
+anchor_left = 0.157
+anchor_top = 1.121
+anchor_right = 0.83800006
+anchor_bottom = 1.5130001
+offset_left = -553.79895
+offset_top = -116.07204
+offset_right = -553.66614
+offset_bottom = -116.01604
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("13_fouqg")
+theme_override_font_sizes/font_size = 68
+text = "The Wolves in the Willows"
+
+[node name="Instructions" type="Label" parent="Splash/Title"]
+offset_left = -316.99997
+offset_top = 242.99997
+offset_right = 328.00003
+offset_bottom = 295.99997
+theme_override_colors/font_color = Color(1, 0.21960784, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 31
+text = "Move using the W A, S, and D 
+or arrow keys."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kpec0")
+}
+
+[node name="RiverPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_0fpqi")
+autoplay = true
+
+[node name="Raven player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_befal")
+autoplay = true
